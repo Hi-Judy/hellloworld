@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array.html</title>
+</head>
+
+<body>
+    <input type="text" id="inputValue" value="test">
+    <p>test</p>
+    <button id ="btn" onclick="addArray()">추가하기</button>
+    <button onclick="removeAry()">제거하기</button>
+    <ul id = "list">
+    </ul>
+    <script>
+
+        const fruits = ['apple', 'banana', 'cherry'];
+        const newFruits =  fruits.slice(0,2);
+
+        console.log(fruits);
+
+        const inputAry=[];
+
+        //화면에 추가.
+        function showList(){ 
+            let ulTag = document.getElementById('list');
+            let tag ='';
+            for(let i=0; i<inputAry.length; i++){
+                tag += '<li>' + inputAry[i] + '</li>'
+            }
+            ulTag.innerHTML = tag; // <ul><li>test</li><li>hello</li></ul>
+        }
+
+
+        //배열 요소 삭제
+        //inputAry[2] = null; =>a,b,c,d,e,f => a,b,null,d,e,f
+        //input.splice(2,2,'d','e'); //인덱스 2번째 위치에서 부터 2개의 문자를 'd''e'로 대체 => a,b,d,e,e,f
+        
+        function removeAry(){
+            // inputAry.pop(); //마지막부터 제거
+            // inputAry.shift(); //처음부터 제거
+            //element의 값을 갖고 오도록
+            //let iv = document.getElementById('inputValue').value;
+            //let iv = document.getElementsByTagName('input')[0].value;
+            let iv = document.querySelector('form>input[type="text"]').value;
+            for (let i=0; i<inputAry.length; i++){
+                if (inputAry[i]==iv){
+                    inputAry.splice(i, 1);
+                    break;
+                }
+            }
+            
+            showList();
+        }
+
+
+        //배열 요소 추가
+        function addArray(){
+            let input = document.getElementById('inputValue');
+            let iValue = input.value;
+            
+            //자바스크립트에서 0, null, ""(공란) => false
+            //자바스크립트에서 20, -9, "  ", "hello" => true
+
+            //비정상적인 처리 => 메세지
+            if(!iValue){
+               alert('값을 입력하세요.');
+               return;
+            } 
+
+            inputAry.unshift(iValue); //제일 앞 위치에 추가됨
+            //inputAry.push(iValue); ////제일 마지막 위치에 추가됨
+            showList();
+            input.value = '';
+            input.focus();
+            console.log(inputAry);
+        }
+    </script>    
+</body>
+
+</html>
+
+<!-- 자바에서의 배열
+String[] fruits = {"Banana", "Orange", "Apple"}; -->
+
+<!-- 자바스크립트에서의 배열
+const fruits = ["Banana", "Orange", "Apple"]
+fruits.push("Lemon"); //제일 마지막 위치에 추가됨
+fruits.unshift("Lemon"); //제일 앞 위치에 추가됨
+fruits.pop(); //제일 마지막 위치에 있는 요소가 제거됨
+fruits.shift(); //제일 앞 위치에 있는 요소가 제거됨
+furits instanceof Array; //배열인지 아닌지 체크 -->

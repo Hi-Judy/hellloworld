@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form/post.html</title>
+</head>
+<body>
+	<!-- 사용자 입력 전송. -->
+	<form action="post.jsp" method="post">
+		사용자 아이디: <input type="text" name="eId"><br>
+		이름: <input type="text" name="ename"><br>
+		이메일: <input type="email" name="mail"><br>
+		직무: <input type="text" name="jobId" value= "IT_PROG"><br>
+		입사일자: <input type="date" name="hireDate"><br>
+		<input type="submit" name="전송">
+		<input type="reset" name="초기화">
+	</form>
+	
+	<h3> 링크 -> 입력처리.</h3>
+	<a href="get.jsp?employeeId=206&phone=3333-4444&salary=25000">입력처리.</a>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/attr2.html</title>
+    <style>
+        p[text] {color: royalblue}
+        p[text="red"]{color: white; background-color: black;}
+        p[text~="bb"]{color: white; background-color: rgb(4, 4, 61);}
+        p[text|="a1"]{color: white; background-color:rgb(1, 75, 1);}
+        p[text^="img"]{color: white; background-color: rgb(146, 11, 11);}
+        p[text$="png"]{color: white; background-color: rgb(156, 134, 9);}
+        p[text*="ong"]{color: white; background-color: rgb(124, 69, 6);}
+    </style>
+</head>
+
+<body>
+    <h2>Text Selector</h2>
+    <p text="hello">모든 텍스트</p>
+    <p text="red">텍스트 매칭 속성</p>
+    <p text="aa bb cc">리스트 매칭 속성</p>
+    <p text="a1-a2-a3">범위 텍스트 매칭 속성</p>
+    <p text="img/pic.jpc">텍스트 시작 매칭 속성</p>
+    <p text="img/pic.png">텍스트 끝 매칭 속성</p>
+    <p text="Seongyong Hong">텍스트 패턴 매칭 속성</p>
+</body>
+</html>

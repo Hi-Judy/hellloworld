@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/table.html</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr style="background-color:khaki;">
+                <th>이름</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>홍민성</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>최민수</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>심은경</td>
+                <td>70</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- colspan(td 합치기), rowspan (tr 합치기) 연습-->
+    <table border="1">
+        <thead>
+            <tr>
+                <td rowspan="2">이름</td>
+                <td>국어</td>
+            </tr>
+            <tr>
+                <td>영어</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">홍길동</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td rowspan="2">김민수</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="3" style="text-align: center;">이름</th>
+            </tr>
+            <tr style="text-align: right;">
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3">홍길동</td>
+            </tr>
+            <tr style="text-align: right;">
+                <td>88</td>
+                <td>89</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td colspan="3">김민수</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td><img width="150" src="../img/흥미니.png" alt="손흥미니"></td>
+                <td><a href="#">89</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="5" style="background-color:lavender;"> 이력서 </th>
+            </tr>
+            <tr>
+                <td rowspan="2"><img width="150" src="../img/최코코.jpg" alt="손흥미니"></td>
+                <td style="text-align: center;">이름: </td>
+                <td style="text-align: center;">최코코</td>
+                <td style="text-align: center;">나이:</td>
+                <td style="text-align: center;">7</td>
+            </tr> 
+            <tr style="text-align: center;">
+                <td>주소: </td>
+                <td colspan="3">우리집</td>
+            </tr>
+        </thead>
+        <tbody style="text-align: center;">   
+            <tr>
+                <td rowspan="2" style="background-color: lemonchiffon;">별명</td>
+                <td colspan="2">미친놈</td>
+                <td colspan="2">2014~현재</td>
+            </tr>
+            <tr>
+                <td colspan="2">잘냄이</td>
+                <td colspan="2">가끔</td>
+            </tr>   
+            <tr>
+                <td style="background-color: darkseagreen;">좋아하는 일</td>
+                <td>간식먹기</td>
+                <td>산책</td>
+                <td colspan="2">풀밭에 뒹굴기</td>
+            </tr>
+
+    </table>
+
+
+</body>
+
+</html>

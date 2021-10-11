@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/function.html</title>
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <script>
+        function hello(){
+            return 'hello world';
+        }
+        hello(); //call
+
+        //arrow function
+        let nice = (name) => {  //nice라는 변수에 익명의 함수를 담기
+            return 'nice to see ' + name;
+        }
+        console.log(nice("라이언"));
+
+        let good = nice;
+        console.log(good("어피치"));
+
+        //function 안에서 this 
+        // let btn = document.getElementById('btn');
+        // btn.onclick = function(){
+        //     console.log(this);
+        // }
+
+        //arrow function 안에서 this -> window 가리키니까 event 사용
+        let btn = document.getElementById('btn');
+        btn.onclick = (event) => { //event라는 object가 가지고있는 target 속성 가져오기
+            console.log(event.target.style.backgroundColor = 'yellow');
+        }
+
+        btn.addEventListener('mouseover', function(){
+            this.style.backgroundColor = 'pink';
+        });
+
+        btn.addEventListener('mouseout', (event) => {
+            event.target.style.backgroundColor = 'white';
+        });
+
+    </script>
+    
+</body>
+
+</html>
