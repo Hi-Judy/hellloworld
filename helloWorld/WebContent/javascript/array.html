@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array.html</title>
+</head>
+
+<body>
+    <input type="text" id="inputValue" value="test">
+    <p>test</p>
+    <button id="btn" onclick="addArray()">추가하기</button>
+    <button onclick="removeAry()">제거하기</button>
+    <ul id="list">
+    </ul>
+    <script>
+
+        const fruits = ['apple', 'banana','cherry'];
+        const newFruits = fruits.slice(0, 2);
+
+        console.log(fruits);
+
+        const inputAry = [];
+
+        //inputAry[2] = null; //a, b, null, d, e, f
+        //inputAry.splice(2, 2, 'd', 'e')  //index값이 2인 위치에서 2개의 값을 d, e로 대체하겠습니다.
+        //inputAry.splice(2, 1);  //2인 위치에서 1개의 값을 지우겠습니다. 대체할 것 없음.
+        //splice를 사용해서 입력값이 같은 값을 1개씩 공백을 나타내지 않고 지울 수 있도록 작성.
+        //w3school.js Array Methods - Slicing an Array
+
+        function showList() {
+            //화면에 추가.
+            let ulTag = document.getElementById('list');
+            let tag = '';
+            for(let i=0; i<inputAry.length; i++) {
+                tag += '<li>' + inputAry[i] + '</li>';
+            }
+            ulTag.innerHTML = tag; //<ul><li>test</li><li>hello</li></ul>
+
+        }
+
+        function removeAry() {
+            // inputAry.shift();
+            // element 값을 가지고 오도록.
+            // 방법1)
+            // let iv = document.getElementById('inputValue').value;
+
+            // 방법2)
+            // let iv = document.getElementsByTagName('input')[0].value;
+
+            // 방법3)
+            let iv = document.querySelector('input[type="text"]').value;
+            console.log(iv);
+            // querySelector : 타입이 text인 input 쿼리 중에서 가장 첫번째 것을 가지고 온다.
+
+            for(let i=0; i<inputAry.length; i++) {
+                if(inputAry[i] == iv) {
+                    inputAry.splice(i, 1,);
+                    break;
+                }
+            }
+            showList();
+        }
+        
+        function addArray() {
+            let input = document.getElementById('inputValue');
+            let iValue = input.value;
+
+            // 배열추가.
+            // 자바 스크립트에서 0, null, "" => false
+            //                 20, -9, " ", "hello" => true
+
+            //비정상적인 처리 => 메세지.
+            if(!iValue) {
+                alert('값을 입력하세요.');
+                return;
+            } 
+
+            inputAry.unshift(iValue);
+            showList();
+            input.value = '';
+            input.focus();
+            console.log(inputAry);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/evemt.html</title>
+
+</head>
+
+<body>
+    <button onclick="clickFunc()">Click</button> 
+    <!-- 실행하고 싶은 이벤트 안에다가 function을 걸어줄 수 있다. ex) onclick, onmouseover... 
+            태그 안에 코드를 작성할 수 있지만, 그 경우 태그의 크기가 너무 커지게 된다.-->
+    <p>here</p>
+    <button onclick="clickFunc2()">Click2</button>
+    <!-- <h1>안녕하세요.</h1> -->
+    <script>
+        // 태그 -> element
+        function clickFunc() {
+            //window.alert('클릭되었습니다.');
+            let h1 = document.createElement('h1');
+            h1.innerHTML = '안녕하세요.';
+            let buttons = document.getElementsByTagName('button');  
+                                    // 특정 태그 명을 가지고 있는 element 집합 가지고 온다. 여러개 가지고 올 수 있음.
+                                    // ex) p: p태그 아래 가지고 옴.
+                                    // ex) button :  button 태그 아래 가지고 온다. 이 때 button이 여러개 있기 때문에 버튼을 지정해 주어야 함.
+                        //document.getElementById() : 지정한 이름 가지고 온다. 하나만 가지고 올 수 있음.
+            buttons[0].after(h1);   //내가 지정한 버튼 뒤에다가 h1을 붙여넣겠다.
+
+            buttons[1].innerHTML = '클릭';
+            buttons[0].style.backgroundColor = 'red';
+        }
+        // clickFunc();
+
+        function clickFunc2() {
+            let p = document.getElementsByTagName('p');
+            p[0].innerHTML = '여기';
+            p[0].style.color = 'blue';
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/index.html</title>
+    
+    <link rel="stylesheet" href="index1.css">
+    <!-- <script src="index1.js"></script> -->
+    <!-- <script src="index2.js"></script> -->
+
+    <!-- createTr을 먼저 받아온 다음, 생성한다. : 2 -> 1
+        ==> index2                ==> index1  -->
+        <!-- index.html
+         index2.js => func createTable() => caeateTable();
+         index1.js => func createTr() -->
+
+    <!-- createTable을 index2로 옮긴 다음 생성한다. : 1 -> 2
+        ==> index1                      ==> index2 -->
+        <!-- index.html
+         index1.js => func createTable()
+         index2.js => func createTr() => createTable(); -->
+
+    <!-- func createTable, caeateTr을 모두 한 곳에 넣고 호출할 수도 있다.
+        ==> 이 경우 어느 위치에서도 fun 호출이 가능하다. 
+        ==> 물론 한 곳에 넣는 것이 가장 안정적이다.-->
+        
+</head>
+
+<body>
+    <div id="show">
+        <!-- table -->
+    </div>
+    <div id="fruit">
+        <!-- <ul>
+            <li>사과, 1000</li>
+            <li>바나나, 2000</li>
+            <li>체리, 3000</li>
+        </ul> -->
+    </div>
+    <div id="multi">
+        <!-- <table border="1">
+            <tr>
+                <td>2*1=2</td>
+            </tr>
+            <tr>
+                <td>2*2=4</td>
+            </tr>
+            <tr>
+                <td>2*3=6</td>
+            </tr>
+            <tr>
+                <td>2*9=18</td>
+            </tr>
+        </table> -->
+    </div>
+    <script src="index4.js"></script> <!-- table 표가 div의 하위에 존재하도록 생성.-->
+</body>
+
+</html>
